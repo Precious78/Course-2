@@ -1,0 +1,69 @@
+$padding: 1rem 2rem;
+$primary-color: royalblue;
+$secondary-color: rgb(2, 24, 90);
+
+body {
+    background: $primary-color;
+
+    .container, .user-data {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        color: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        %btn {
+            border: none;
+            outline: none;
+            color: #fff;
+            border-radius: 5px;
+            font-size: 20px;
+            margin: 1rem auto;
+            padding: $padding;
+        }
+        %btn-default {
+            @extend %btn;
+            font-size: 12px;
+            padding: .7rem 1rem;
+            cursor: pointer;
+        }
+        .btn-default {
+            @extend %btn-default;
+            background: darken($primary-color, 20%);
+        }
+        .btn-default-2 {
+            @extend %btn-default;
+            background: lighten($primary-color, 5%);
+            font-size: 15px;
+            margin: .1rem;
+        }
+        & button {
+            @extend %btn;
+            background: $secondary-color;
+            cursor: pointer;
+        }
+        // & button:nth-child(even) {
+        //     background: crimson;
+        // }
+        label {
+            font-size: 20px;
+        }
+        input {
+            @extend %btn;
+            padding: .7rem 1rem;
+            width: 15rem;
+            background-color: lighten($primary-color, 25%);
+            color: $secondary-color;
+
+            #pwd-show {
+                position: absolute;
+                right: 10px;
+            }
+        }
+        .generateRandomPwd {
+            padding: .5rem 0;
+        }
+        
+    }
+
+}
